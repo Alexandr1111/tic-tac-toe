@@ -1,0 +1,11 @@
+build
+coverage
+node_modules
+.github
+*.md
+.gitignore
+yarn.lock
+yarn-error.log
+package-lock.json
+LICENSE
+dist

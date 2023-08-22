@@ -1,0 +1,44 @@
+.gameWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+
+  & .desk {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.newGameButton {
+  background: linear-gradient(to right, #007bff, #00a5ff);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.newGameButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255 255 255 / 20%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.newGameButton:hover {
+  color: #000;
+}
+
+.newGameButton:hover::before {
+  opacity: 1;
+}
