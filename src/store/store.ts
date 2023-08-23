@@ -1,5 +1,4 @@
 import { combineReducers, compose, createStore } from 'redux';
-// import thunkMiddleware, {ThunkAction} from "redux-thunk";  // своё название любое
 import deskReducer from './deskReducer';
 
 const rootReducer = combineReducers({
@@ -8,9 +7,6 @@ const rootReducer = combineReducers({
 
 type RootReducerType = typeof rootReducer;
 export type AppStateType = ReturnType<RootReducerType>;
-
-// let state: AppStateType;
-// state.dialogsPage   Можем теперь достать часть стейта используя ts
 
 // redux devtools installed
 // @ts-ignore

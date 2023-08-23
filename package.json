@@ -35,6 +35,9 @@
     "lint:style": "stylelint **/*.{css,scss,sass}",
     "lint-fix:style": "stylelint **/*.{css,scss,sass} --fix"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint src/**/*.ts{,x} --color --fix"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
