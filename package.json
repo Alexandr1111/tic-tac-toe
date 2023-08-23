@@ -1,5 +1,6 @@
 {
   "name": "tic-tac-toe",
+  "homepage": "https://alexandr1111.github.io/tic-tac-toe/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "classnames": "^2.3.2",
+    "gh-pages": "^6.0.0",
     "lodash": "^4.17.21",
     "prettier": "^3.0.2",
     "react": "^18.2.0",
@@ -27,6 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "lint:ts": "eslint src/**/*.ts{,x} --color",
     "lint-fix:ts": "eslint src/**/*.ts{,x} --color --fix",
