@@ -1,20 +1,26 @@
-name: Проверки кода
+name: GitHub Actions Demo
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    types: [ unlabeled, opened, synchronize, reopened, ready_for_review ]
-
+    branches: [ main ]
 jobs:
-  checks:
-    name: Проверки кода
+  init:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false && contains(github.event.pull_request.labels.*.name, 'WIP') == false && contains(github.event.pull_request.labels.*.name, 'Blocked') == false && contains(github.event.pull_request.labels.*.name, 'Suspended') == false
-
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
     steps:
-      - name: Скачивание репозитория
-        uses: actions/checkout@v2
-
-      - name: Проверка code style
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn install
+      - name: build project
+        run: yarn build
+      - name: lint code
         run: yarn lint:ts
-        if: always()
+      - name: lint style
+        run: yarn lint:style
