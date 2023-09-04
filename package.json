@@ -35,8 +35,8 @@
     "lint-fix:ts": "eslint src/**/*.ts{,x} --color --fix",
     "format": "prettier --write {src,types,scripts}/**/*.{json,{j,t}s{,x},css}",
     "prepare": "husky install",
-    "lint:style": "stylelint **/*.{css,scss,sass}",
-    "lint-fix:style": "stylelint **/*.{css,scss,sass} --fix"
+    "lint:style": "stylelint **/*.{scss,sass}",
+    "lint-fix:style": "stylelint **/*.{scss,sass} --fix"
   },
   "lint-staged": {
     "*.{scss,css,ts,tsx}": "eslint src/**/*.ts{,x} --color --fix",

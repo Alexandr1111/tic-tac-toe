@@ -12,7 +12,7 @@ type InitialStateType = typeof beforeInitialState;
 
 const deskReducer = (
   state = beforeInitialState,
-  action: any
+  action: any,
 ): InitialStateType => {
   switch (action.type) {
     case RESET_STORE_ACTION:

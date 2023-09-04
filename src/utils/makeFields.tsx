@@ -6,7 +6,7 @@ import { defineFieldType } from './defineFieldType';
 export const makeFields = (
   deskData: FieldType[],
   onClickFieldCallback: (fieldData: FieldType) => void,
-  currentMoveNumber: number
+  currentMoveNumber: number,
 ): ReactElement[] => {
   return deskData.map((field) => {
     return (
