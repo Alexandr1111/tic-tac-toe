@@ -10,7 +10,10 @@ for (let i = 0; i < 9; i++) {
 
 type InitialStateType = typeof beforeInitialState;
 
-const deskReducer = (state = beforeInitialState, action: any): InitialStateType => {
+const deskReducer = (
+  state = beforeInitialState,
+  action: any
+): InitialStateType => {
   switch (action.type) {
     case RESET_STORE_ACTION:
       return {
@@ -20,7 +23,7 @@ const deskReducer = (state = beforeInitialState, action: any): InitialStateType 
     case SET_SIGN_IN_FIELD:
       const updatedDesk = state.desk.map((fieldData) => {
         if (fieldData.coordinate === action.data.coordinate) {
-          return fieldData = action.data;
+          return (fieldData = action.data);
         }
 
         return fieldData;
@@ -29,7 +32,7 @@ const deskReducer = (state = beforeInitialState, action: any): InitialStateType 
       return {
         ...state,
         desk: updatedDesk,
-        currentMoveNumber: state.currentMoveNumber += 1,
+        currentMoveNumber: (state.currentMoveNumber += 1),
       };
   }
   return state;

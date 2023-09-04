@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deskActions } from '../../store/deskActions';
-import { currentMoveNumberSelector, deskSelector } from '../../store/selectors/deskSelectors';
+import {
+  currentMoveNumberSelector,
+  deskSelector,
+} from '../../store/selectors/deskSelectors';
 import c from './GameWrappperStyles.module.scss';
 import { makeFields } from '../../utils/makeFields';
 import { FieldType } from '../../store/types';
@@ -30,7 +33,10 @@ const GameWrapper = () => {
    */
   const onClickFieldHandler = (fieldData: FieldType) => {
     return desk.forEach((fieldDataInner) => {
-      if ((fieldDataInner.coordinate === fieldData.coordinate && !fieldDataInner.type)) {
+      if (
+        fieldDataInner.coordinate === fieldData.coordinate &&
+        !fieldDataInner.type
+      ) {
         if (!checkWin(desk)) {
           dispatch(deskActions.setSign(fieldData));
         }
@@ -43,7 +49,13 @@ const GameWrapper = () => {
       <div className={c.desk}>
         {makeFields(desk, onClickFieldHandler, currentMoveNumber)}
       </div>
-      <button className={c.newGameButton} onClick={() => dispatch(deskActions.startNewGame())}>Начать заново</button>
+      <button
+        className={c.newGameButton}
+        style={{}}
+        onClick={() => dispatch(deskActions.startNewGame())}
+      >
+        Начать заново
+      </button>
     </div>
   );
 };

@@ -39,7 +39,8 @@
     "lint-fix:style": "stylelint **/*.{css,scss,sass} --fix"
   },
   "lint-staged": {
-    "*.{scss,css,ts,tsx}": "eslint src/**/*.ts{,x} --color --fix"
+    "*.{scss,css,ts,tsx}": "eslint src/**/*.ts{,x} --color --fix",
+    "*.{scss,css,ts,tsx}": "prettier --write {src,types,scripts}/**/*.{json,{j,t}s{,x},css}"
   },
   "browserslist": {
     "production": [

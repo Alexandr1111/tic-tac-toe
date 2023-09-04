@@ -9,9 +9,11 @@ type FieldP = {
 } & FieldType;
 
 const Field: FC<FieldP> = ({ coordinate, type, onClickField }) => {
-
   return (
-    <div className={cn(c.field)} onClick={() => onClickField({ coordinate, type })}>
+    <div
+      className={cn(c.field)}
+      onClick={() => onClickField({ coordinate, type })}
+    >
       {selectSign(type)}
     </div>
   );

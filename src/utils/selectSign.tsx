@@ -7,9 +7,5 @@ export const selectSign = (type?: FieldTypes): ReactElement | null => {
     return null;
   }
 
-  return (
-    <img src={type === FieldTypes.Cross ? cross : circle} alt={'sign'} />
-  );
+  return <img src={type === FieldTypes.Cross ? cross : circle} alt={'sign'} />;
 };
-
-
